@@ -30,9 +30,10 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
+                <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <goal>install</goal>
+                    <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
@@ -41,5 +42,5 @@
     <scm>
         <developerConnection>scm:git:https://github.com/szymonstuszek/sfg-pet-clinic.git</developerConnection>
       <tag>HEAD</tag>
-  </scm>
+    </scm>
 </project>
