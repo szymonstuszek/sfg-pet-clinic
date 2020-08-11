@@ -87,4 +87,9 @@ class OwnerControllerTest {
                 .andExpect(view().name("notimplemented"));
 
     }
+
+    @Test
+    public void mockTest() {
+
+    }
 }
