@@ -86,7 +86,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Set<Owner> findAllByLastNameLike(String lastName) {
+    public Set<Owner> findAllByLastNameLikeIgnoreCase(String lastName) {
         return new HashSet<>();
     }
 }

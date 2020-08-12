@@ -69,7 +69,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormReturnMany() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(owners);
+        when(ownerService.findAllByLastNameLikeIgnoreCase(anyString())).thenReturn(owners);
 
         mockMvc.perform(get("/owners"))
                 .andExpect(status().isOk())
@@ -86,11 +86,21 @@ class OwnerControllerTest {
         Set<Owner> ownerSetOfOne = new HashSet<>();
         ownerSetOfOne.add(owner);
 
-        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(ownerSetOfOne);
+        when(ownerService.findAllByLastNameLikeIgnoreCase(anyString())).thenReturn(ownerSetOfOne);
 
         mockMvc.perform(get("/owners"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"));
+    }
+
+    @Test
+    void processFindFormWithEmptyStringReturnAll() throws Exception {
+        when(ownerService.findAllByLastNameLikeIgnoreCase(anyString())).thenReturn(owners);
+
+        mockMvc.perform(get("/owners"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owners/ownersList"))
+                .andExpect(model().attribute("selections", hasSize(2)));
     }
 
     @Test

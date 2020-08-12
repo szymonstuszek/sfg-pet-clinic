@@ -43,10 +43,12 @@ public class OwnerController {
             owner.setLastName("");
         }
 
-        Set<Owner> owners = ownerService.findAllByLastNameLike(owner.getLastName());
+        Set<Owner> owners = ownerService.findAllByLastNameLikeIgnoreCase("%" + owner.getLastName() + "%");
 
         if (owners.isEmpty()) {
             result.rejectValue("lastName", "notFound", "not found");
+            owners = ownerService.findAll();
+            model.addAttribute("selections", owners);
             return "owners/findOwners";
         } else if (owners.size() == 1) {
             owner = owners.stream().findFirst().get();
