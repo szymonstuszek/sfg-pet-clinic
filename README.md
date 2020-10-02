@@ -1,6 +1,8 @@
 #circleci build status <br/>
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
 
+https://peaceful-meadow-23095.herokuapp.com/
+
 # sfg-pet-clinic
 Spring Boot monolithic application built with the Spring Frameworkguru tutorial: <br/>
 https://www.udemy.com/course/spring-framework-5-beginner-to-guru
@@ -14,13 +16,12 @@ Practice of building a CRUD application: <br/>
 - separating the web and data layers <br/>
 - structuring the code in a clean way by setting up a controller, service, repository layer <br/>
 - writing tests <br/>
+
 Functionality for adding, reading, updating and deleting entries. <br/>
 
-![alt text](https://github.com/szymonstuszek/angular-fitness-tracker/blob/master/src/assets/fitapp1.PNG)
-![alt text](https://github.com/szymonstuszek/angular-fitness-tracker/blob/master/src/assets/fitapp2.PNG)
+![alt text](https://github.com/szymonstuszek/sfg-pet-clinic/blob/master/screens/pet1.PNG)
+![alt text](https://github.com/szymonstuszek/sfg-pet-clinic/blob/master/screens/pet2.PNG)
 
-
-https://peaceful-meadow-23095.herokuapp.com/
 
 Technologies:
 - Java 8
